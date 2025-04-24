@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluga.ae</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+    <header>  
+        <nav class="nav-bar">  
+            <h1>Aluga.ae</h1> 
+            <ul class="list-itens">
+                <li><a href="#">Kitnet</a></li>
+                <li><a href="#">Casa</a></li>
+                <li><a href="#">Quarto</a></li>
+                <li><a href="#">Apartamento</a></li>
+            </ul>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburguer">
+                <img src="https://icon-library.com/images/hamburger-icon-white/hamburger-icon-white-16.jpg" width="57px">            
+            </label>
+            <nav class="menu">
+                <a href="#">Kitnet</a>
+                <a href="#">Casa</a>
+                <a href="#">Quarto</a>
+                <a href="#">Aparatamento</a>
+            </nav>
+        </nav>
+    </header>
+    <main>
+        <div id="map" style="height: 500px;"  style="height: 500px; width: 100%;"></div>
+        <script>
+            // Passo 1: Inicialize o mapa
+            var map = L.map('map').setView([-8.047, -34.883], 13);  // Substitua as coordenadas pelo local desejado
+    
+            // Passo 2: Adicione o mapa base (OpenStreetMap)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+    
+            // Passo 3: Dados das casas (coordenadas e textos)
+            var casas = [
+                { nome: "Casa 1", descricao: "Endereço: Rua Exemplo, 123", coords: [-8.047, -34.883] },
+                { nome: "Casa 2", descricao: "Endereço: Rua Teste, 456", coords: [-8.050, -34.880] },
+                { nome: "Casa 3", descricao: "Endereço: Rua Fictícia, 789", coords: [-8.045, -34.885] }
+            ];
+    
+            // Passo 4: Adicionar marcadores para todas as casas
+            casas.forEach(function(casa) {
+                var marker = L.marker(casa.coords).addTo(map);  // Cria o marcador nas coordenadas
+                marker.bindPopup("<b>" + casa.nome + "</b><br>" + casa.descricao);  // Exibe o nome e a descrição da casa
+            });
+        </script>
+
+        <h2 class="text">Imóveis em Destaque</h2>
+        <section class="imoveis-destaque">
+            <div class="imoveis">
+                <img src="https://img.olx.com.br/images/90/905537734812667.jpg" class="card-img">
+                <h2 class="text-card">Casa simples no ibura</h2>
+                <h3 class="text-card">R$ 500/mês</h3>
+                <p class="text-card"> 1 quarto - 35m²</p>
+                <a href="#" class="button-contato">Entre em Contato</a>
+            </div>
+            <div class="imoveis">
+                <img src="https://img.olx.com.br/images/90/905537734812667.jpg" class="card-img">
+                <h2 class="text-card">Casa simples no ibura</h2>
+                <h3 class="text-card">R$ 500/mês</h3>
+                <p class="text-card"> 1 quarto - 35m²</p>
+                <a href="#" class="button-contato">Entre em Contato</a>
+            </div>
+            <div class="imoveis">
+                <img src="https://img.olx.com.br/images/90/905537734812667.jpg" class="card-img">
+                <h2 class="text-card">Casa simples no ibura</h2>
+                <h3 class="text-card">R$ 500/mês</h3>
+                <p class="text-card"> 1 quarto - 35m²</p>
+                <a href="#" class="button-contato">Entre em Contato</a>
+            </div>
+            <div class="imoveis">
+                <img src="https://img.olx.com.br/images/90/905537734812667.jpg" class="card-img">
+                <h2 class="text-card">Casa simples no ibura</h2>
+                <h3 class="text-card">R$ 500/mês</h3>
+                <p class="text-card"> 1 quarto - 35m²</p>
+                <a href="#" class="button-contato">Entre em Contato</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="info">
+                <h2>Encontre o imóvel perfeito no Ibura!</h2>
+                <a href="#">Ver todos os imóveis disponiveis</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h3>© 2025 Aluga.ae • Termos de uso • Contato</h3>
+    </footer>
+    
+</body>
+</html>

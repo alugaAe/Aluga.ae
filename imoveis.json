@@ -1,0 +1,20 @@
+[
+    {
+      "titulo": "Casa na UR-11",
+      "descricao": "2 quartos, sala e cozinha",
+      "lat": -8.115000,
+      "lng": -34.960000,
+      "preco": "R$ 550,00",
+      "link": "#"
+    },
+    {
+      "titulo": "Quarto no Ibura de Baixo",
+      "descricao": "Ideal pra solteiro",
+      "lat": -8.120000,
+      "lng": -34.955000,
+      "preco": "R$ 300,00",
+      "link": "#"
+    }
+
+]
+  

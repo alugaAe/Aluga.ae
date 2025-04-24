@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #FAF6F2;
+}
+
+.nav-bar {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2D0C16;
+    padding: 30px;
+    height: 70px;
+}
+
+.list-itens {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-right: 110px;
+    align-items: center;
+}
+
+.list-itens li a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu-mobile {
+    position: relative;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background:  #1a060c;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #ff6659;
+    font-size: 18px;
+    font-family: 'dafont';
+}
+
+.menu a:hover {
+    background: #ff6659;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.text{
+    color: #5A3E36;
+    padding: 30px;
+    font-family: 'Urbanist', sans-serif;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    #map{
+        width: 100%;
+    }
+
+    .list-itens {
+        display: none;
+    }
+
+    .hamburguer {
+        display: block;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-about-us h3 {
+        font-size: 20px;
+    }
+}
+
+
+.imoveis-destaque{
+    margin-left: 20px;
+    display: flex;
+    gap: 55px;
+    overflow-x: auto;
+    padding: 10px;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.imoveis{
+    flex: 0 0 auto;
+    width: 160px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 100px;
+    text-align: center;
+}
+
+.card-img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.text-card{
+    color: #222222;
+    padding: 5px;
+    font-weight: 100;
+    font-family: "Urbanist";
+}
+
+.button-contato{
+    font-family: "Urbanist";
+    text-decoration: none;
+    color: white;
+    background-color: #FF7A00;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.info{
+    color: white;
+    background-color: #2D0C16;
+    font-family: "Urbanist";
+    margin-bottom: 100px;
+    margin-top: 100px;
+    text-align: center;
+    padding: 50px;
+}
+
+.info h2{
+    margin: 20px;
+}
+
+.info a{
+    border-radius: 24px;
+    width: 35px;
+    background-color: #FF7A00;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+footer{
+    font-weight: 100;
+    font-family: "Urbanist";
+    color: white;
+    padding: 15px;
+    text-align: center;
+    background-color: #2D0C16;
+}
