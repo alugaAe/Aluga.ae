@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termos de Uso - Aluga.ae</title>
+    <title>Kitnets - Aluga.ae</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
@@ -188,56 +188,57 @@
             padding-top: 80px;
         }
 
-        .terms-container {
-            max-width: 800px;
+        .empty-state {
+            max-width: 600px;
             margin: 0 auto;
             padding: 40px 20px;
+            text-align: center;
         }
 
-        .terms-content {
-            background-color: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        .empty-state-icon {
+            font-size: 80px;
+            color: #FF7A00;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
         }
 
-        .terms-section {
-            margin-bottom: 30px;
-        }
-
-        .terms-section h2 {
+        .empty-state-title {
+            font-size: 28px;
+            font-weight: 700;
             color: #2D0C16;
-            font-size: 22px;
             margin-bottom: 15px;
-            position: relative;
-            padding-left: 20px;
         }
 
-        .terms-section h2:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 8px;
-            height: 15px;
-            width: 5px;
-            background-color: #FF7A00;
-            border-radius: 3px;
-        }
-
-        .terms-section p {
+        .empty-state-text {
+            font-size: 18px;
+            color: #5A3E36;
+            margin-bottom: 30px;
             line-height: 1.6;
-            margin-bottom: 15px;
-            color: #555;
         }
 
-        .terms-section ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7A00 0%, #FF9A3E 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .terms-section li {
-            margin-bottom: 8px;
-            color: #555;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
+        }
+
+        .btn-primary i {
+            margin-right: 10px;
         }
 
         .back-button {
@@ -257,13 +258,29 @@
             margin-right: 8px;
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
         @media (max-width: 640px) {
-            .terms-content {
-                padding: 20px;
+            .empty-state-icon {
+                font-size: 60px;
             }
 
-            .terms-section h2 {
-                font-size: 20px;
+            .empty-state-title {
+                font-size: 24px;
+            }
+
+            .empty-state-text {
+                font-size: 16px;
             }
         }
     </style>
@@ -281,11 +298,11 @@
             <div class="hidden md:flex items-center space-x-8">
                 <a href="./index.html"
                     class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Início</a>
-                <a href="./kitnet.html"
+                <a href="./Imovel Indisponivel.html"
                     class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Kitnet</a>
                 <a href="./casa.html"
                     class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Casa</a>
-                <a href="./apartamento.html"
+                <a href="./Imovel Indisponivel.html"
                     class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Apartamento</a>
                 <a href="https://wa.me/5581989332654"
                     class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-md">Anunciar</a>
@@ -294,30 +311,25 @@
     </nav>
 
     <main>
-        <div class="terms-container">
+        <div class="empty-state">
             <a href="./index.html" class="back-button">
                 <i class="fas fa-arrow-left"></i> Voltar para a página inicial
             </a>
-
-            <div class="terms-content">
-                <h1 class="text-3xl font-bold text-gray-800 mb-6">Termos de Uso do Aluga.ae</h1>
-                <p class="text-gray-600 mb-8">Última atualização:22/05/2025</p>
-
-                <div class="terms-section">
-                    <h2>1. Aceitação dos Termos</h2>
-                    <p>Ao acessar e utilizar o site Aluga.ae, você concorda em cumprir estes Termos de Uso, nossa
-                        Política de Privacidade e todas as leis e regulamentos aplicáveis. Se você não concordar com
-                        algum destes termos, está proibido de usar ou acessar este site.</p>
-                </div>
-
-                <div class="terms-section">
-                    <h2>1. Aceitação dos Termos</h2>
-                    <p>A fim de garantir a segurança e a confiança em suas compras, informamos que não nos responsabilizamos por transações realizadas fora de nossos canais oficiais. Para realizar uma compra com segurança, entre em contato conosco exclusivamente por meio de:</p>
-                   <p> Instagram: @aluga.aee
-                   <p> WhatsApp: 81989332654</p>
-                </div>
-                
+            
+            <div class="empty-state-icon">
+                <i class="fas fa-search"></i>
             </div>
+            
+            <h1 class="empty-state-title">Nenhuma Kitnet Disponível</h1>
+            
+            <p class="empty-state-text">
+                Ainda não temos Kitnets publicadas aqui, mas isso pode mudar a qualquer instante! 
+                Fique à vontade para voltar mais tarde ou entre em contato se quiser anunciar o seu imóvel.
+            </p>
+            
+            <a href="https://wa.me/5581989332654" class="btn-primary">
+                <i class="fas fa-plus"></i> Anunciar meu imóvel
+            </a>
         </div>
     </main>
 
@@ -326,7 +338,7 @@
             <i class="fas fa-home"></i>
             <span class="label">Início</span>
         </a>
-        <a href="./kitnet.html" class="bottom-nav-item">
+        <a href="./kitnet.html" class="bottom-nav-item active">
             <i class="fas fa-bed"></i>
             <span class="label">Kitnet</span>
         </a>
@@ -345,7 +357,7 @@
     </nav>
 
     <script>
-
+     
         const navbar = document.querySelector('.nav-bar');
         window.addEventListener('scroll', function () {
             if (window.scrollY > 50) {
@@ -355,6 +367,7 @@
             }
         });
 
+        
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
 
@@ -367,6 +380,7 @@
             }
         });
 
+        
         const announceBtn = document.querySelector('.bottom-nav-item.announce');
         announceBtn.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-5px) scale(1.1)';
