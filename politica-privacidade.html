@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termos de Uso - Aluga.ae</title>
+    <title>Política de Privacidade - Aluga.ae</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -51,7 +51,6 @@
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* ESTILOS ADICIONADOS PARA O MENU MOBILE */
         .bottom-nav-item {
             display: flex;
             flex-direction: column;
@@ -122,52 +121,29 @@
             margin-top: 4px;
             line-height: 1;
         }
-        /* FIM DOS ESTILOS ADICIONADOS */
 
-        .feature-card {
+        .privacy-content {
             background: white;
             border-radius: 16px;
+            padding: 2rem;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        .privacy-section {
+            margin-bottom: 2rem;
         }
 
-        .icon-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
+        .privacy-section h3 {
+            color: #2D0C16;
+            margin-bottom: 0.5rem;
         }
 
-        .gradient-section {
-            background: linear-gradient(135deg, #2D0C16 0%, #4A2E2E 100%);
-        }
-
-        .btn-primary {
-            background-color: #FF7A00;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #E56B00;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: #2D0C16;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background-color: #1A060C;
-            transform: translateY(-2px);
+        .highlight-box {
+            background-color: #FFF6E9;
+            border-left: 4px solid #FF7A00;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
         }
 
         .fade-in {
@@ -194,30 +170,6 @@
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
-
-        .terms-content {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .terms-section {
-            margin-bottom: 2rem;
-        }
-
-        .terms-section h3 {
-            color: #2D0C16;
-            margin-bottom: 0.5rem;
-        }
-
-        .warning-box {
-            background-color: #FFF6E9;
-            border-left: 4px solid #FF7A00;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
 
         @media (min-width: 768px) {
             .bottom-nav {
@@ -253,73 +205,90 @@
         <!-- Hero Section -->
         <section class="py-12 md:py-16 px-6 bg-gradient-to-r from-orange-50 to-amber-50">
             <div class="container mx-auto text-center">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Termos de Uso</h1>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto fade-in delay-1">Conheça os termos que regem o uso da nossa plataforma</p>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 fade-in">Política de Privacidade</h1>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto fade-in delay-1">Entenda como protegemos suas informações</p>
                 <p class="text-sm text-gray-500 mt-2 fade-in delay-2">Última atualização: 15 de Março de 2025</p>
             </div>
         </section>
 
-        <!-- Terms Content -->
+        <!-- Privacy Content -->
         <section class="py-12 px-6">
             <div class="container mx-auto">
-                <div class="terms-content max-w-4xl mx-auto">
-                    <div class="terms-section fade-in">
-                        <h3 class="text-xl font-bold">1. Aceitação dos Termos</h3>
-                        <p class="text-gray-700">Ao utilizar a plataforma Aluga.ae, você concorda com estes Termos de Uso e com nossa Política de Privacidade. Se você não concordar com qualquer parte destes termos, não deverá utilizar nossos serviços.</p>
-                    </div>
-
-                    <div class="terms-section fade-in delay-1">
-                        <h3 class="text-xl font-bold">2. Serviços Prestados</h3>
-                        <p class="text-gray-700">O Aluga.ae atua como intermediário na conexão entre proprietários and locatários, não nos responsabilizando por:</p>
+                <div class="privacy-content max-w-4xl mx-auto">
+                    <div class="privacy-section fade-in">
+                        <h3 class="text-xl font-bold">1. Informações que Coletamos</h3>
+                        <p class="text-gray-700">Coletamos apenas informações necessárias para o funcionamento da plataforma:</p>
                         <ul class="list-disc pl-5 mt-2 text-gray-700 space-y-2">
-                            <li>Acordos financeiros entre as partes</li>
-                            <li>Condições físicas dos imóveis</li>
-                            <li>Descumprimento de contratos estabelecidos entre as partes</li>
+                            <li>Dados de contato (nome, telefone, e-mail)</li>
+                            <li>Informações sobre o imóvel (para proprietários)</li>
+                            <li>Dados de preferência de busca (para locatários)</li>
                         </ul>
                     </div>
 
-                    <div class="terms-section fade-in delay-1">
-                        <h3 class="text-xl font-bold">3. Responsabilidades do Usuário</h3>
-                        <p class="text-gray-700">Você concorda em:</p>
+                    <div class="privacy-section fade-in delay-1">
+                        <h3 class="text-xl font-bold">2. Como Utilizamos suas Informações</h3>
+                        <p class="text-gray-700">Suas informações são utilizadas para:</p>
                         <ul class="list-disc pl-5 mt-2 text-gray-700 space-y-2">
-                            <li>Fornecer informações verdadeiras e precisas</li>
-                            <li>Não tentar utilizar a plataforma para atividades fraudulentas</li>
-                            <li>Respeitar a legislação brasileira vigente</li>
+                            <li>Facilitar a conexão entre proprietários e locatários</li>
+                            <li>Melhorar nossos serviços</li>
+                            <li>Enviar comunicações importantes sobre a plataforma</li>
+                            <li>Prevenir fraudes e atividades ilegais</li>
                         </ul>
                     </div>
 
-                    <div class="terms-section fade-in delay-2">
-                        <h3 class="text-xl font-bold">4. Prevenção a Golpes - Orientações Essenciais</h3>
-                        <p class="text-gray-700">Para sua segurança, nunca:</p>
-                        <div class="warning-box">
-                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Aceite propostas de valores significativamente abaixo do mercado</li>
-                                <li>Forneça dados bancários ou pessoais sensíveis.</li>
-                                <li>Realize transações sem documentação adequada</li>
-                            </ul>
+                    <div class="privacy-section fade-in delay-1">
+                        <h3 class="text-xl font-bold">3. Compartilhamento de Dados</h3>
+                        <div class="highlight-box">
+                            <p class="text-gray-700 font-bold">Seus dados pessoais NUNCA são compartilhados com terceiros para fins comerciais.</p>
                         </div>
-                        <p class="text-gray-700 mt-2">Em caso de suspeita de golpe, entre em contato conosco imediatamente através dos nossos canais oficiais.</p>
+                        <p class="text-gray-700">Podemos compartilhar informações apenas:</p>
+                        <ul class="list-disc pl-5 mt-2 text-gray-700 space-y-2">
+                            <li>Com seu consentimento explícito</li>
+                            <li>Para cumprir obrigações legais</li>
+                            <li>Para proteger direitos e segurança do Aluga.ae e nossos usuários</li>
+                        </ul>
                     </div>
 
-                    <div class="terms-section fade-in delay-2">
-                        <h3 class="text-xl font-bold">5. Propriedade Intelectual</h3>
-                        <p class="text-gray-700">Todo o conteúdo da plataforma Aluga.ae é de nossa propriedade ou licenciado para nós. Isso inclui, mas não se limita a, textos, gráficos, logotipos, ícones, imagens, clipes de áudio, downloads digitais e compilações de dados.</p>
+                    <div class="privacy-section fade-in delay-2">
+                        <h3 class="text-xl font-bold">4. Segurança de Dados</h3>
+                        <p class="text-gray-700">Implementamos medidas de segurança técnicas e administrativas para proteger suas informações, incluindo:</p>
+                        <ul class="list-disc pl-5 mt-2 text-gray-700 space-y-2">
+                            <li>Criptografia de dados sensíveis</li>
+                            <li>Acesso restrito às informações</li>
+                            <li>Monitoramento constante de atividades suspeitas</li>
+                        </ul>
                     </div>
 
-                    <div class="terms-section fade-in delay-3">
-                        <h3 class="text-xl font-bold">6. Modificações nos Termos</h3>
-                        <p class="text-gray-700">Reservamo-nos o direito de modificar estes Termos a qualquer momento. Todas as alterações entrarão em vigor imediatamente após a publicação na plataforma. O uso continuado de nossos serviços após tais modificações constituirá sua concordância com os termos revisados.</p>
+                    <div class="privacy-section fade-in delay-2">
+                        <h3 class="text-xl font-bold">5. Seus Direitos</h3>
+                        <p class="text-gray-700">Você tem direito a:</p>
+                        <ul class="list-disc pl-5 mt-2 text-gray-700 space-y-2">
+                            <li>Acessar seus dados pessoais</li>
+                            <li>Corrigir informações inexatas</li>
+                            <li>Solicitar a exclusão de seus dados</li>
+                            <li>Revogar consentimentos previamente dados</li>
+                        </ul>
                     </div>
 
-                    <div class="terms-section fade-in delay-3">
-                        <h3 class="text-xl font-bold">7. Lei Aplicável</h3>
-                        <p class="text-gray-700">Estes Termos são regidos pelas leis da República Federativa do Brasil. Qualquer disputa relacionada a estes termos será submetida à jurisdição exclusiva dos tribunais da comarca de Recife/PE.</p>
+                    <div class="privacy-section fade-in delay-3">
+                        <h3 class="text-xl font-bold">6. Retenção de Dados</h3>
+                        <p class="text-gray-700">Mantemos suas informações apenas pelo tempo necessário para cumprir as finalidades descritas nesta política.</p>
                     </div>
 
-                    <div class="mt-8 pt-6 border-t border-gray-200 text-center fade-in delay-3">
-                        <p class="text-gray-600">Em caso de dúvidas sobre estes Termos de Uso, entre em contato conosco:</p>
-                        <a href="https://wa.me/5581989332654" class="inline-block mt-4 btn-primary text-white px-6 py-2 rounded-full font-medium">Falar pelo WhatsApp</a>
+                    <div class="privacy-section fade-in delay-3">
+                        <h3 class="text-xl font-bold">7. Contato</h3>
+                        <p class="text-gray-700">Para questões sobre privacidade ou exercício de seus direitos, entre em contato através do e-mail:</p>
+                        <div class="mt-4 p-4 bg-gray-100 rounded-lg text-center">
+                            <p class="text-lg font-medium text-gray-800">alugaae2025@gmail.com</p>
+                        </div>
                     </div>
+
+                    <div class="privacy-section fade-in delay-3">
+                        <h3 class="text-xl font-bold">8. Alterações nesta Política</h3>
+                        <p class="text-gray-700">Podemos atualizar esta política periodicamente. Alterações significativas serão comunicadas por e-mail ou através de nossos canais oficiais.</p>
+                    </div>
+
+                    
                 </div>
             </div>
         </section>

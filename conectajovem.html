@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta Jovem - Conectando a Juventude ao Futuro Profissional</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(14,165,233,0.15) 50%, rgba(16,185,129,0.15) 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .coming-soon {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
+                    <i data-feather="link" class="text-white"></i>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800">Conecta Jovem</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#sobre" class="text-gray-600 hover:text-blue-500 transition">Sobre</a>
+                <a href="#vagas" class="text-gray-600 hover:text-blue-500 transition">Vagas</a>
+                <a href="#cursos" class="text-gray-600 hover:text-blue-500 transition">Cursos</a>
+                <a href="#newsletter" class="text-gray-600 hover:text-blue-500 transition">Contato</a>
+            </nav>
+            <button class="md:hidden" id="menu-toggle">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white py-2 px-4 shadow-lg" id="mobile-menu">
+            <a href="#sobre" class="block py-2 text-gray-600 hover:text-blue-500 transition">Sobre</a>
+            <a href="#vagas" class="block py-2 text-gray-600 hover:text-blue-500 transition">Vagas</a>
+            <a href="#cursos" class="block py-2 text-gray-600 hover:text-blue-500 transition">Cursos</a>
+            <a href="#newsletter" class="block py-2 text-gray-600 hover:text-blue-500 transition">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Conectando a Juventude ao <span class="text-blue-500">Futuro Profissional</span></h1>
+                <p class="text-xl text-gray-600 mb-8">A ponte entre jovens talentos e as melhores oportunidades no mercado de trabalho.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#vagas" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition shadow-md">Ver Vagas</a>
+                    <a href="#cursos" class="bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-lg transition shadow-md">Cursos Gratuitos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nosso Propósito</h2>
+                <p class="text-lg text-gray-600">O Conecta Jovem nasceu para reduzir a distância entre jovens em busca do primeiro emprego e empresas que valorizam novos talentos.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl card-hover">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Capacitação</h3>
+                    <p class="text-gray-600">Cursos práticos e gratuitos para desenvolver habilidades valorizadas pelo mercado.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl card-hover">
+                    <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-4">
+                        <i data-feather="briefcase" class="text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Oportunidades</h3>
+                    <p class="text-gray-600">Vagas exclusivas para jovens de 16 a 24 anos em empresas parceiras.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl card-hover">
+                    <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                        <i data-feather="users" class="text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Comunidade</h3>
+                    <p class="text-gray-600">Rede de apoio com mentores e outros jovens em busca do primeiro emprego.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vagas Section -->
+    <section id="vagas" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Vagas em Destaque</h2>
+                <p class="text-lg text-gray-600">Oportunidades especialmente selecionadas para jovens talentos.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Vaga 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i data-feather="code" class="text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Jovem Aprendiz TI</h3>
+                            <p class="text-sm text-gray-500">Tech Solutions</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mr-1 mb-1">São Paulo, SP</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mr-1 mb-1">Presencial</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Auxiliar no suporte técnico e manutenção de computadores. Conhecimento básico em informática.</p>
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition text-sm">Candidatar-se</button>
+                </div>
+
+                <!-- Vaga 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover border-l-4 border-orange-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mr-3">
+                            <i data-feather="shopping-cart" class="text-orange-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Atendente Comercial</h3>
+                            <p class="text-sm text-gray-500">Supermercado Bom Preço</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <span class="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded mr-1 mb-1">Rio de Janeiro, RJ</span>
+                        <span class="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded mr-1 mb-1">Presencial</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Atendimento ao cliente, organização de produtos e auxílio no caixa. Treinamento fornecido.</p>
+                    <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-lg transition text-sm">Candidatar-se</button>
+                </div>
+
+                <!-- Vaga 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i data-feather="dollar-sign" class="text-green-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Auxiliar Administrativo</h3>
+                            <p class="text-sm text-gray-500">Contabilidade Total</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-1 mb-1">Belo Horizonte, MG</span>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-1 mb-1">Híbrido</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Organização de documentos, atendimento telefônico e apoio aos departamentos. Conhecimento em Excel é diferencial.</p>
+                    <button class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition text-sm">Candidatar-se</button>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-50 font-medium py-2 px-6 rounded-lg transition">Ver todas as vagas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos Section -->
+    <section id="cursos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Cursos Gratuitos em Breve</h2>
+                <p class="text-lg text-gray-600">Prepare-se para o mercado de trabalho com nossos cursos práticos.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Curso 1 -->
+                <div class="relative bg-gray-50 p-6 rounded-xl shadow-sm card-hover">
+                    <span class="coming-soon bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">EM BREVE</span>
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                        <i data-feather="code" class="text-blue-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Programação e Automação</h3>
+                    <p class="text-gray-600 text-sm">Introdução à lógica de programação e automação de tarefas com Python.</p>
+                </div>
+
+                <!-- Curso 2 -->
+                <div class="relative bg-gray-50 p-6 rounded-xl shadow-sm card-hover">
+                    <span class="coming-soon bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">EM BREVE</span>
+                    <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                        <i data-feather="monitor" class="text-green-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Informática Essencial</h3>
+                    <p class="text-gray-600 text-sm">Domine o Windows, internet, e-mails e ferramentas básicas de escritório.</p>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="relative bg-gray-50 p-6 rounded-xl shadow-sm card-hover">
+                    <span class="coming-soon bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">EM BREVE</span>
+                    <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mb-4">
+                        <i data-feather="bar-chart-2" class="text-orange-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Excel para Mercado</h3>
+                    <p class="text-gray-600 text-sm">Planilhas, fórmulas e gráficos para se destacar em processos seletivos.</p>
+                </div>
+
+                <!-- Curso 4 -->
+                <div class="relative bg-gray-50 p-6 rounded-xl shadow-sm card-hover">
+                    <span class="coming-soon bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded">EM BREVE</span>
+                    <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                        <i data-feather="file-text" class="text-purple-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Word Profissional</h3>
+                    <p class="text-gray-600 text-sm">Formatação de documentos, currículos e relatórios para o ambiente corporativo.</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-50 font-medium py-2 px-6 rounded-lg transition">Expressar interesse</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Fique por dentro das novidades!</h2>
+                <p class="mb-8">Cadastre-se para ser notificado sobre novas vagas, cursos e eventos.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="text" placeholder="Seu nome" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <input type="email" placeholder="Seu e-mail" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <button type="submit" class="bg-green-500 hover:bg-green-600 font-medium py-3 px-6 rounded-lg transition shadow-md whitespace-nowrap">Cadastrar</button>
+                </form>
+                <p class="text-blue-100 text-sm mt-4">Prometemos não enviar spam. Você pode cancelar a qualquer momento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
+                            <i data-feather="link" class="text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Conecta Jovem</h3>
+                    </div>
+                    <p class="text-gray-400">Conectando talentos jovens com oportunidades transformadoras.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition">Sobre o projeto</a></li>
+                        <li><a href="#vagas" class="text-gray-400 hover:text-white transition">Vagas</a></li>
+                        <li><a href="#cursos" class="text-gray-400 hover:text-white transition">Cursos</a></li>
+                        <li><a href="#newsletter" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i data-feather="mail" class="mr-2"></i> contato@conectajovem.org</li>
+                        <li class="flex items-center"><i data-feather="phone" class="mr-2"></i> (11) 9999-9999</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-blue-600 flex items-center justify-center transition" aria-label="Instagram">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-blue-700 flex items-center justify-center transition" aria-label="LinkedIn">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-green-500 flex items-center justify-center transition" aria-label="WhatsApp">
+                            <i data-feather="message-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Conecta Jovem. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Feather icons
+        feather.replace();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

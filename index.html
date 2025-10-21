@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="ico.png">
+    <link rel="icon" href="https://img.icons8.com/m_rounded/200/FFFFFF/home.png">
     <style>
         body {
             font-family: 'Urbanist', sans-serif;
@@ -209,9 +209,6 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-            flex: 0 0 auto;
-            width: 320px;
-            margin-right: 20px;
         }
 
         .property-card:hover {
@@ -240,9 +237,6 @@
             border-radius: 16px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
-            flex: 0 0 auto;
-            width: 320px;
-            margin-right: 20px;
         }
 
         .testimonial-card:hover {
@@ -257,11 +251,6 @@
         .scroll-container {
             scrollbar-width: thin;
             scrollbar-color: #FF7A00 #FAF6F2;
-            display: flex;
-            overflow-x: auto;
-            padding: 20px 0;
-            scroll-snap-type: x proximity;
-            -webkit-overflow-scrolling: touch;
         }
 
         .scroll-container::-webkit-scrollbar {
@@ -383,7 +372,9 @@
 
         @media (max-width: 640px) {
             .fab-button {
-                display: none;
+                bottom: 70px;
+                padding: 12px 20px;
+                font-size: 14px;
             }
 
             .fab-text {
@@ -399,197 +390,18 @@
             .fab-button {
                 right: 30px;
                 bottom: 30px;
-                display: flex; 
             }
         }
 
-        
-        .properties-container {
-            position: relative;
-        }
-
-        .scroll-container {
-            scroll-behavior: smooth;
-        }
-
-        .scroll-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-            z-index: 10;
+        /* New style for sale button */
+        .btn-sale {
+            background-color: #4CAF50;
             transition: all 0.3s ease;
         }
 
-        .scroll-button:hover {
-            background-color: #FF7A00;
-            color: white;
-        }
-
-        .scroll-button.left {
-            left: -20px;
-        }
-
-        .scroll-button.right {
-            right: -20px;
-        }
-
-       
-        @media (max-width: 767px) {
-            .scroll-container {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 20px;
-                scroll-padding: 0 20px;
-            }
-            
-            .property-card {
-                scroll-snap-align: start;
-                min-width: 85%;
-                margin-right: 15px;
-                flex: 0 0 auto;
-            }
-            
-            .property-card:last-child {
-                margin-right: 0;
-            }
-            
-            .testimonial-card {
-                scroll-snap-align: start;
-                min-width: 85%;
-                margin-right: 15px;
-                flex: 0 0 auto;
-            }
-            
-            .testimonial-card:last-child {
-                margin-right: 0;
-            }
-            
-            .scroll-button {
-                display: none;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .scroll-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-                overflow-x: visible;
-            }
-            
-            .property-card {
-                width: 100%;
-                margin-right: 0;
-            }
-            
-            .testimonial-card {
-                width: 100%;
-                margin-right: 0;
-            }
-        }
-
-       
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-bottom {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer-bottom {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                text-align: left;
-            }
-        }
-
-        .footer-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            font-size: 1.125rem;
-            font-weight: 6;
-        }
-
-        .footer-section ul {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .footer-section ul li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        @media (max-width: 640px) {
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-            }
-
-            .hero-buttons a {
-                width: 100%;
-                text-align: center;
-                padding: 12px 16px;
-                font-size: 16px;
-                border-radius: 12px;
-            }
-
-            .btn-primary, .btn-secondary {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .btn-primary i, .btn-secondary i {
-                margin-right: 8px;
-                font-size: 18px;
-            }
-        }
-
-        
-        @media (min-width: 641px) {
-            .hero-buttons {
-                flex-direction: row;
-                gap: 1.5rem;
-            }
-
-            .hero-buttons a {
-                width: auto;
-            }
+        .btn-sale:hover {
+            background-color: #3e8e41;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -604,11 +416,11 @@
             </div>
 
             
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#" style="color: #FB923C;" class="hover:text-orange-400 transition-colors duration-300 font-medium">Início</a>
-                <a href="./Imovel Indisponivel.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Kitnet</a>
-                <a href="./Casas.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Casa</a>
-                <a href="./Imovel Indisponivel.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Apartamento</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="./index.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Início</a>
+                <a href="./kitnet.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Kitnet</a>
+                <a href="./casas.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Casa</a>
+                <a href="./venda-casas.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Venda</a>
                 <a href="https://wa.me/5581989332654" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-md">Anunciar</a>
             </div>
         </div>
@@ -623,26 +435,24 @@
                         <h1 class="text-4xl md:text-5xl font-bold mb-6">Encontre seu lar perfeito no <span
                                 class="text-orange-500">Ibura</span></h1>
                         <p class="text-lg md:text-xl mb-8 text-gray-700">A plataforma mais completa para alugar imóveis
-                            no bairro do Ibura. Kitnets, casas e apartamentos com os melhores preços.</p>
-                        <div class="hero-buttons">
+                            no bairro do Ibura. Kitnets e casas com os melhores preços.</p>
+                        <div class="flex flex-wrap gap-4 hero-buttons">
                             <a href="#properties"
-                                class="btn-primary text-white px-8 py-3 rounded-full font-medium shadow-lg">
-                                <i class="fas fa-search"></i>
-                                <span>Explorar imóveis</span>
-                            </a>
+                                class="btn-primary text-white px-8 py-3 rounded-full font-medium shadow-lg">Explorar
+                                imóveis</a>
                             <a href="#map-section"
-                                class="btn-secondary text-white px-8 py-3 rounded-full font-medium shadow-lg">
-                                <i class="fas fa-map-marked-alt"></i>
-                                <span>Ver no mapa</span>
-                            </a>
+                                class="btn-secondary text-white px-8 py-3 rounded-full font-medium shadow-lg">Ver no
+                                mapa</a>
+                            <a href="./venda-casas.html"
+                                class="btn-sale text-white px-8 py-3 rounded-full font-medium shadow-lg">Imóveis à Venda</a>
                         </div>
                     </div>
                     <div class="md:w-1/2 fade-in delay-1">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                            <img src="https://oxerecife.com.br/wp-content/uploads/2024/07/agosto31ateurbanaibura-840x560.jpg"
                                 alt="Casa no Ibura" class="w-full h-auto rounded-2xl shadow-xl">
                             <div class="absolute -bottom-4 -right-4 bg-white px-6 py-3 rounded-xl shadow-lg">
-                                <p class="font-bold text-orange-500">+5 imóveis</p>
+                                <p class="font-bold text-orange-500">+1 imóveis</p>
                                 <p class="text-sm text-gray-600">disponíveis</p>
                             </div>
                         </div>
@@ -669,78 +479,78 @@
                         Veja várias opções de casas à venda. Filtre por tipo, preço e características.</p>
                 </div>
 
-                <div class="properties-container relative">
-                    <div class="scroll-container">
-                        <!-- Card 1 -->
-                        <div class="property-card bg-white fade-in delay-1">
-                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                                alt="Kitnet" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <div class="flex justify-between items-start mb-4">
-                                    <h3 class="text-xl font-bold">Kitnet</h3>
-                                    <span class="price-tag">R$ 1/mês</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">Kitnet.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="feature-badge"><i class="fas fa-bed mr-1"></i> 1 quarto</span>
-                                    <span class="feature-badge"><i class="fas fa-ruler-combined mr-1"></i> 35m²</span>
-                                    <span class="feature-badge"><i class="fas fa-utensils mr-1"></i> Cozinha</span>
-                                </div>
-                                <a href="./Casas.html"
-                                    class="block mt-6 btn-secondary text-white text-center py-2 rounded-full font-medium">Ver
-                                    detalhes</a>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="property-card bg-white fade-in delay-1">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                            alt="Kitnet" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold">Kitnet</h3>
+                                <span class="price-tag">R$ 1/mês</span>
                             </div>
+                            <p class="text-gray-600 mb-4">Kitnet.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="feature-badge"><i class="fas fa-bed mr-1"></i> 1 quarto</span>
+                                <span class="feature-badge"><i class="fas fa-ruler-combined mr-1"></i> 35m²</span>
+                                <span class="feature-badge"><i class="fas fa-utensils mr-1"></i> Cozinha</span>
+                            </div>
+                            <a href="#"
+                                class="block mt-6 btn-secondary text-white text-center py-2 rounded-full font-medium">Ver
+                                detalhes</a>
                         </div>
+                    </div>
 
-                        <!-- Card 2 -->
-                        <div class="property-card bg-white fade-in delay-2">
-                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                                alt="Casa térrea" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <div class="flex justify-between items-start mb-4">
-                                    <h3 class="text-xl font-bold">Casa</h3>
-                                    <span class="price-tag">R$ 1/mês</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">Casa.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="feature-badge"><i class="fas fa-bed mr-1"></i> 2 quartos</span>
-                                    <span class="feature-badge"><i class="fas fa-ruler-combined mr-1"></i> 70m²</span>
-                                    <span class="feature-badge"><i class="fas fa-tree mr-1"></i> Quintal</span>
-                                </div>
-                                <a href="./Casas.html"
-                                    class="block mt-6 btn-secondary text-white text-center py-2 rounded-full font-medium">Ver
-                                    detalhes</a>
+                    <!-- Card 2 -->
+                    <div class="property-card bg-white fade-in delay-2">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                            alt="Casa térrea" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold">Casa</h3>
+                                <span class="price-tag">R$ 1/mês</span>
                             </div>
+                            <p class="text-gray-600 mb-4">Casa.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="feature-badge"><i class="fas fa-bed mr-1"></i> 2 quartos</span>
+                                <span class="feature-badge"><i class="fas fa-ruler-combined mr-1"></i> 70m²</span>
+                                <span class="feature-badge"><i class="fas fa-tree mr-1"></i> Quintal</span>
+                            </div>
+                            <button>
+                    
+                            </button>
+                            <a href="#"
+                                class="block mt-6 btn-secondary text-white text-center py-2 rounded-full font-medium">Ver
+                                detalhes</a>
                         </div>
+                    </div>
 
-                        <!-- Card 3 -->
-                        <div class="property-card bg-white fade-in delay-3">
-                            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                                alt="Apartamento moderno" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <div class="flex justify-between items-start mb-4">
-                                    <h3 class="text-xl font-bold">Apartamento</h3>
-                                    <span class="price-tag">R$ 1/mês</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">Apartamento.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="feature-badge"><i class="fas fa-bed mr-1"></i> 3 quartos</span>
-                                    <span class="feature-badge"><i class="fas fa-ruler-combined mr-1"></i> 85m²</span>
-                                    <span class="feature-badge"><i class="fas fa-swimming-pool mr-1"></i> Piscina</span>
-                                </div>
-                                <a href="./Casas.html"
-                                    class="block mt-6 btn-secondary text-white text-center py-2 rounded-full font-medium">Ver
-                                    detalhes</a>
+                    <!-- Card 3 -->
+                    <div class="property-card bg-white fade-in delay-3">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                            alt="Apartamento moderno" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold">Apartamento</h3>
+                                <span class="price-tag">R$ 1/mês</span>
                             </div>
+                            <p class="text-gray-600 mb-4">Apartamento.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="feature-badge"><i class="fas fa-bed mr-1"></i> 3 quartos</span>
+                                <span class="feature-badge"><i class="fas fa-ruler-combined mr-1"></i> 85m²</span>
+                                <span class="feature-badge"><i class="fas fa-swimming-pool mr-1"></i> Piscina</span>
+                            </div>
+                            <a href="#"
+                                class="block mt-6 btn-secondary text-white text-center py-2 rounded-full font-medium">Ver
+                                detalhes</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="text-center mt-12">
-                    <a href="./Casas.html"
-                        class="btn-primary text-white px-8 py-3 rounded-full font-medium shadow-lg inline-block">Ver
-                        todos os imóveis</a>
-                </div>
+               <div class="text-center mt-12">
+                <a href="#" class="btn-primary text-white px-8 py-3 rounded-full font-medium shadow-lg inline-block my-4">Ver todos os imóveis</a>
+                <a href="./venda-casas.html" class="btn-sale text-white px-8 py-3 rounded-full font-medium shadow-lg inline-block my-4">Ver imóveis à venda</a>
+            </div>
             </div>
         </section>
 
@@ -748,285 +558,287 @@
         <section class="py-12 px-6 gradient-section text-white">
             <div class="container mx-auto">
                 <div class="text-center mb-12 fade-in">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-4">O que dizem nossos clientes</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">O que dizem nossos usuários</h2>
                     <p class="max-w-2xl mx-auto opacity-90">Experiências reais de pessoas que encontraram seu lar
                         perfeito com a Aluga.ae</p>
                 </div>
 
-                <div class="relative">
-                    <div class="scroll-container">
-                        <!-- Depoimento 1 -->
-                        <div class="testimonial-card fade-in delay-1">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Maria Silva"
-                                        class="w-12 h-12 rounded-full mr-4">
-                                    <div>
-                                        <h4 class="font-bold"
-                                            style="color: rgba(0, 0, 0, 0.7); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
-                                            Maria Silva</h4>
-                                        <div class="flex text-yellow-400 text-sm">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Depoimento 1 -->
+                    <div class="testimonial-card fade-in delay-1">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Maria Silva"
+                                    class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold"
+                                        style="color: rgba(0, 0, 0, 0.7); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
+                                        Maria Silva</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
                                     </div>
                                 </div>
-                                <p class="text-gray-600">"Encontrei uma kitnet perfeita para mim no Ibura. O processo foi
-                                    muito simples e rápido. Recomendo a Aluga.ae para quem busca um lugar para morar!"</p>
                             </div>
-                        </div>
-
-                        <!-- Depoimento 2 -->
-                        <div class="testimonial-card fade-in delay-2">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Carlos Oliveira"
-                                        class="w-12 h-12 rounded-full mr-4">
-                                    <div>
-                                        <h4 class="font-bold"
-                                            style="color: rgba(0, 0, 0, 0.7); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
-                                            Carlos Oliveira</h4>
-                                        <div class="flex text-yellow-400 text-sm">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600">"Aluguei uma casa térrea para minha família através da Aluga.ae.
-                                    Fiquei impressionado com a variedade de opções e o atendimento personalizado."</p>
-                            </div>
-                        </div>
-
-                        <!-- Depoimento 3 -->
-                        <div class="testimonial-card fade-in delay-3">
-                            <div class="p-6">
-                                <div class="flex items-center mb-4">
-                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Santos"
-                                        class="w-12 h-12 rounded-full mr-4">
-                                    <div>
-                                        <h4 class="font-bold"
-                                            style="color: rgba(0, 0, 0, 0.7); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
-                                            Ana Santos</h4>
-                                        <div class="flex text-yellow-400 text-sm">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600">"Como estudante, precisei de um lugar acessível e bem localizado. A
-                                    Aluga.ae me ajudou a encontrar uma kitnet com um preço justo. Super
-                                    recomendo!"</p>
-                            </div>
+                            <p class="text-gray-600">"Encontrei uma kitnet perfeita para mim no Ibura. O processo foi
+                                muito simples e rápido. Recomendo a Aluga.ae para quem busca um lugar para morar!"</p>
                         </div>
                     </div>
-                </div>
-            </div>
+
+                    <!-- Depoimento 2 -->
+                    <div class="testimonial-card fade-in delay-2">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Carlos Oliveira"
+                                    class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold"
+                                        style="color: rgba(0, 0, 0, 0.7); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
+                                        Carlos Oliveira</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">"Aluguei uma casa térrea para minha família através da Aluga.ae.
+                                Fiquei impressionado com a variedade de opções e o atendimento personalizado."</p>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 3 -->
+                    <div class="testimonial-card fade-in delay-3">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Santos"
+                                    class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-bold"
+                                        style="color: rgba(0, 0, 0, 0.7); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
+                                        Ana Santos</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">"Como estudante, precisei de um lugar acessível e bem localizado. A
+                                Aluga.ae me ajudou a encontrar uma kitnet com um preço justo. Super
+                                recomendo!"</p>
+                        </div>
+                    </div>
         </section>
 
         
         <footer class="footer py-12 px-6">
             <div class="container mx-auto">
-                <div class="footer-grid">
-                    <div class="footer-section">
-                        <div class="flex items-center space-x-2 mb-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 footer-grid">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-6">
                             <i class="fas fa-home text-white text-2xl"></i>
-                            <a href="./index.html" class="text-2xl font-bold text-white">Aluga.<span class="text-orange-500">ae</span></a>
+                            <a href="./index.html" class="text-2xl font-bold text-white">Aluga.<span
+                                    class="text-orange-500">ae</span></a>
                         </div>
                         <p class="text-gray-300 mb-4">A plataforma mais completa para alugar imóveis no bairro do Ibura.</p>
                         <div class="flex space-x-4">
-                            <a href="https://www.instagram.com/aluga.aee/?hl=pt-br" class="text-white hover:text-orange-400 text-xl"><i class="fab fa-instagram"></i></a>
+                            
+                            <a href="https://www.instagram.com/aluga.aee/" class="text-white hover:text-orange-400 text-xl"><i
+                                    class="fab fa-instagram"></i></a>
                             <a href="https://wa.me/5581989332654" class="text-white hover:text-orange-400 text-xl"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
 
-                    <div class="footer-section">
+                    <div>
                         <h4 class="text-white font-bold text-lg mb-4">Links úteis</h4>
-                        <ul>
+                        <ul class="space-y-2">
+                            <li><a href="./como-funciona.html" class="footer-link text-gray-300 hover:text-orange-400">Como funciona</a></li>
                             <li><a href="./termos.html" class="footer-link text-gray-300 hover:text-orange-400">Termos de uso</a></li>
+                            <li><a href="#" class="footer-link text-gray-300 hover:text-orange-400">Política de
+                                    privacidade</a></li>
+                            
+                            </li>
                         </ul>
                     </div>
 
-                    <div class="footer-section">
+                    <div>
                         <h4 class="text-white font-bold text-lg mb-4">Tipos de imóveis</h4>
-        <ul>
-            <li><a href="./Imovel Indisponivel.html" class="footer-link text-gray-300 hover:text-orange-400">Kitnets</a></li>
-            <li><a href="./Casas.html" class="footer-link text-gray-300 hover:text-orange-400">Casas</a></li>
-            <li><a href="./Imovel Indisponivel.html" class="footer-link text-gray-300 hover:text-orange-400">Apartamentos</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-section">
-        <h4 class="text-white font-bold text-lg mb-4">Contato</h4>
-        <ul>
-            <li class="flex items-center">
-                <i class="fas fa-map-marker-alt text-orange-400 mr-2"></i>
-                <span class="text-gray-300">Ibura, Recife - PE</span>
-            </li>
-            <li class="flex items-center">
-                <i class="fas fa-phone-alt text-orange-400 mr-2"></i>
-                <span class="text-gray-300">(81) 98933-2654</span>
-            </li>
-            <li class="flex items-center">
-                <i class="fas fa-envelope text-orange-400 mr-2"></i>
-                <span class="text-gray-300">aluga.ae2025@gmail.com</span>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<div class="footer-bottom">
-    <p class="text-gray-400 mb-4 md:mb-0">© 2025 Aluga.ae - Todos os direitos reservados</p>
-    <div class="flex space-x-6">
-        
-    </div>
-</div>
-</div>
-</footer>
-
-
-<a href="https://wa.me/5581989332654" class="fab-button">
-    <i class="fas fa-home"></i>
-    <span class="fab-text">Anunciar Imóvel</span>
-</a>
-
-<!-- Celularzinho -->
-<nav class="bottom-nav md:hidden">
-    <a href="./index.html" class="bottom-nav-item">
-        <i class="fas fa-home"></i>
-        <span class="label">Início</span>
-    </a>
-    <a href="./Imovel Indisponivel.html" class="bottom-nav-item">
-        <i class="fas fa-bed"></i>
-        <span class="label">Kitnet</span>
-    </a>
-    <a href="https://wa.me/5581989332654" class="bottom-nav-item announce">
-        <div class="announce-text">ANUNCIAR</div>
-        <i class="fas fa-plus"></i>
-    </a>
-    <a href="./Casas.html" class="bottom-nav-item">
-        <i class="fas fa-house-user"></i>
-        <span class="label">Casa</span>
-    </a>
-    <a href="./Imovel Indisponivel.html" class="bottom-nav-item">
-        <i class="fas fa-building"></i>
-        <span class="label">Apartamento</span>
-    </a>
-</nav>
-
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-    
-    const map = L.map('map').setView([-8.1129, -34.9176], 14);
-
-    
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    
-    const homeIcon = L.icon({
-        iconUrl: 'https://cdn-icons-png.flaticon.com/512/2776/2776067.png',
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, -32]
-    });
-
-   
-    const properties = [
-        { lat: -8.1129, lng: -34.9176, title: "Casa", price: "R$ 1/mês", type: "Casa", rooms: 2, size: "60m²" },
-        { lat: -8.1150, lng: -34.9150, title: "Kitnet", price: "R$ 1/mês", type: "Kitnet", rooms: 1, size: "35m²" },
-        { lat: -8.1100, lng: -34.9200, title: "Apartamento", price: "R$ 1/mês", type: "Apartamento", rooms: 3, size: "85m²" },
-        { lat: -8.1135, lng: -34.9190, title: "Casa2", price: "R$ 1/mês", type: "Casa", rooms: 2, size: "70m²" }
-    ];
-
-    properties.forEach(property => {
-        const marker = L.marker([property.lat, property.lng], { icon: homeIcon }).addTo(map)
-            .bindPopup(`
-                <div class="font-sans">
-                    <h3 class="font-bold text-lg">${property.title}</h3>
-                    <p class="text-orange-500 font-medium">${property.price}</p>
-                    <div class="flex items-center text-sm text-gray-600 mt-2">
-                        <i class="fas fa-home mr-1"></i> ${property.type}
+                        <ul class="space-y-2">
+                            <li><a href="#" class="footer-link text-gray-300 hover:text-orange-400">Kitnets</a></li>
+                            <li><a href="./casas.html" class="footer-link text-gray-300 hover:text-orange-400">Casas</a></li>
+                            <li><a href="#" class="footer-link text-gray-300 hover:text-orange-400">Apartamentos</a></li>
+                            <li><a href="./venda.html" class="footer-link text-gray-300 hover:text-orange-400">Imóveis à Venda</a></li>
+                        </ul>
                     </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-bed mr-1"></i> ${property.rooms} quartos
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <i class="fas fa-ruler-combined mr-1"></i> ${property.size}
+
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-4">Contato</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-map-marker-alt text-orange-400 mr-2"></i> <span
+                                    class="text-gray-300">Ibura, Recife - PE</span></li>
+                            <li class="flex items-center"><i class="fas fa-phone-alt text-orange-400 mr-2"></i> <span
+                                    class="text-gray-300">(81) 98933-2654</span></li>
+                            <li class="flex items-center"><i class="fas fa-envelope text-orange-400 mr-2"></i> <span
+                                    class="text-gray-300">aluga.ae2025@gmail.com</span></li>
+                        </ul>
                     </div>
                 </div>
-            `);
 
-        marker.on('click', function () {
-            this.openPopup();
-        });
-    });
+                <div
+                    class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center footer-bottom">
+                    <p class="text-gray-400 mb-4 md:mb-0">© 2025 Aluga.ae - Todos os direitos reservados</p>
+                    <div class="flex space-x-6">
+                                                        
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-  
-    const navbar = document.querySelector('.nav-bar');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+        
+        <a href="https://wa.me/5581989332654" class="fab-button">
+            <i class="fas fa-home"></i>
+            <span class="fab-text">Anunciar Imóvel</span>
+        </a>
 
-    
-    const fadeElements = document.querySelectorAll('.fade-in');
+        <!-- Celularzinho -->
+        <nav class="bottom-nav md:hidden">
+            <a href="./index.html" class="bottom-nav-item">
+                <i class="fas fa-home"></i>
+                <span class="label">Início</span>
+            </a>
+            <a href="./kitnet.html" class="bottom-nav-item">
+                <i class="fas fa-bed"></i>
+                <span class="label">Kitnet</span>
+            </a>
+             <a href="https://wa.me/5581989332654" class="bottom-nav-item announce">
+                <div class="announce-text">ANUNCIAR</div>
+                <i class="fas fa-plus"></i>
+            </a>
+            <a href="./venda-casas.html" class="bottom-nav-item">
+                <i class="fas fa-tag"></i>
+                <span class="label">Venda</span>
+            </a>
+           
+            <a href="./Casas.html" class="bottom-nav-item">
+                <i class="fas fa-house-user"></i>
+                <span class="label">Casa</span>
+            </a>
 
-    const fadeInObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
+        </nav>
 
-    fadeElements.forEach(element => {
-        fadeInObserver.observe(element);
-    });
+        
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+            
+            const map = L.map('map').setView([-8.1129, -34.9176], 14); // Coordenadas do Ibura, Recife
 
-  
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
 
-    bottomNavItems.forEach(item => {
-        const href = item.getAttribute('href').split('/').pop();
-        if (currentPage === href || (currentPage === '' && href === 'index.html')) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
+            
+            const homeIcon = L.icon({
+                iconUrl: 'https://cdn-icons-png.flaticon.com/512/2776/2776067.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            });
 
-    
-    const announceBtn = document.querySelector('.bottom-nav-item.announce');
-    announceBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px) scale(1.1)';
-    });
-    announceBtn.addEventListener('mouseleave', function() {
-        this.style.transform = '';
-    });
+           
+            const properties = [
+                { lat: -8.1129, lng: -34.9176, title: "Casa", price: "R$ 1/mês", type: "Casa", rooms: 2, size: "60m²" },
+                { lat: -8.1150, lng: -34.9150, title: "Kitnet", price: "R$ 1/mês", type: "Kitnet", rooms: 1, size: "35m²" },
+                { lat: -8.1100, lng: -34.9200, title: "Apartamento", price: "R$ 1/mês", type: "Apartamento", rooms: 3, size: "85m²" },
+                { lat: -8.1135, lng: -34.9190, title: "Casa2", price: "R$ 1/mês", type: "Casa", rooms: 2, size: "70m²" }
+            ];
 
-    
-    document.querySelector('.fab-button').addEventListener('click', function(e) {
-        this.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            this.style.transform = '';
-        }, 200);
-    });
-</script>
+            properties.forEach(property => {
+                const marker = L.marker([property.lat, property.lng], { icon: homeIcon }).addTo(map)
+                    .bindPopup(`
+                        <div class="font-sans">
+                            <h3 class="font-bold text-lg">${property.title}</h3>
+                            <p class="text-orange-500 font-medium">${property.price}</p>
+                            <div class="flex items-center text-sm text-gray-600 mt-2">
+                                <i class="fas fa-home mr-1"></i> ${property.type}
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-bed mr-1"></i> ${property.rooms} quartos
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-ruler-combined mr-1"></i> ${property.size}
+                            </div>
+                        </div>
+                    `);
+
+                marker.on('click', function () {
+                    this.openPopup();
+                });
+            });
+
+          
+            const navbar = document.querySelector('.nav-bar');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+
+          
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+
+            bottomNavItems.forEach(item => {
+                const href = item.getAttribute('href').split('/').pop();
+                if (currentPage === href || (currentPage === '' && href === 'index.html')) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            
+            const announceBtn = document.querySelector('.bottom-nav-item.announce');
+            announceBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.1)';
+            });
+            announceBtn.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+
+            
+            document.querySelector('.fab-button').addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        </script>
 </body>
 </html>
