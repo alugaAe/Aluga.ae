@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="home.png">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Urbanist:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly"
-        defer></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Urbanist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
     <style>
         body {
             font-family: 'Urbanist', sans-serif;
@@ -47,7 +44,6 @@
             backdrop-filter: blur(10px);
         }
 
-
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -62,12 +58,10 @@
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
         }
 
-       
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
@@ -78,7 +72,6 @@
                 transform: translateY(-20px);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -90,7 +83,6 @@
                 transform: translateY(20px);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -102,13 +94,11 @@
                 transform: scale(0.95);
                 opacity: 0;
             }
-
             to {
                 transform: scale(1);
                 opacity: 1;
             }
         }
-
 
         .animate-fade-in {
             animation: fadeIn 0.6s ease-out forwards;
@@ -145,7 +135,6 @@
         .animation-delay-500 {
             animation-delay: 0.5s;
         }
-
 
         .bottom-nav-item {
             display: flex;
@@ -240,7 +229,6 @@
             line-height: 1;
         }
 
-
         .fab-button {
             position: fixed;
             bottom: 80px;
@@ -269,7 +257,6 @@
             font-size: 18px;
         }
 
-       
         .property-card {
             transition: all 0.3s ease;
             cursor: pointer;
@@ -323,7 +310,6 @@
             transform: rotate(180deg);
         }
 
-       
         .amenity {
             display: flex;
             align-items: center;
@@ -352,7 +338,6 @@
             font-size: 14px;
         }
 
-        
         .modal {
             display: none;
             position: fixed;
@@ -470,6 +455,7 @@
         #map {
             width: 100%;
             height: 100%;
+            border-radius: 8px;
         }
 
         .property-contact {
@@ -556,26 +542,40 @@
             0% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.05);
             }
-
             100% {
                 transform: scale(1);
             }
+        }
+
+        /* Estilo para o ícone do marcador laranja */
+        .orange-marker-icon {
+            background-color: #FF7A00;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .leaflet-popup-content {
+            margin: 8px 12px;
+        }
+
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
         }
 
         @media (min-width: 768px) {
             .bottom-nav {
                 display: none;
             }
-
             body {
                 padding-bottom: 0;
             }
         }
-
 
         @media (max-width: 640px) {
             .fab-button {
@@ -583,43 +583,34 @@
                 padding: 12px 20px;
                 font-size: 14px;
             }
-
             .fab-text {
                 display: none;
             }
-
             .fab-button i {
                 font-size: 22px;
             }
-
             .modal-content {
                 width: 95%;
                 margin: 10% auto;
                 padding: 20px;
             }
-
             .property-gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
-
             .property-gallery img.main-image {
                 grid-column: span 2;
             }
-
             .property-features {
                 grid-template-columns: 1fr;
             }
-
             .property-contact {
                 flex-direction: column;
                 gap: 15px;
             }
-
             .property-contact-buttons {
                 width: 100%;
                 justify-content: space-between;
             }
-
             .contact-button {
                 flex: 1;
                 justify-content: center;
@@ -633,23 +624,19 @@
             }
         }
 
-
         main {
             padding-top: 80px;
         }
-
 
         .header-container {
             opacity: 0;
             animation: slideInDown 0.6s ease-out 0.2s forwards;
         }
 
-
         .search-container {
             opacity: 0;
             animation: slideInDown 0.6s ease-out 0.3s forwards;
         }
-
 
         .no-results {
             text-align: center;
@@ -676,74 +663,39 @@
             max-width: 500px;
             margin: 0 auto;
         }
-
-
-        .map-marker {
-            background-color: #FF7A00;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
-            position: relative;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .map-marker::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 10px 10px 0;
-            border-style: solid;
-            border-color: #FF7A00 transparent transparent;
-        }
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased" style="overflow: auto;">
 
     <nav class="nav-bar">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
             <div class="flex items-center space-x-2">
                 <i class="fas fa-home text-white text-2xl"></i>
-                <a href="./index.html" class="text-2xl font-bold text-white">Aluga.<span
-                        class="text-orange-500">ae</span></a>
+                <a href="./index.html" class="text-2xl font-bold text-white">Aluga.<span class="text-orange-500">ae</span></a>
             </div>
 
-
             <div class="hidden md:flex items-center space-x-8">
-                <a href="./index.html"
-                    class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Início</a>
-                <a href="./kitnet.html"
-                    class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Kitnet</a>
-                <a href="./casa.html"
-                    class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Casa</a>
-                <a href="./apartamento.html"
-                    class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Apartamento</a>
-                <a href="https://wa.me/5581989332654"
-                    class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-md">Anunciar</a>
+                <a href="./index.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Início</a>
+                <a href="./kitnet.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Kitnet</a>
+                <a href="./casa.html" class="text-white hover:text-orange-400 transition-colors duration-300 font-medium">Casa</a>>
+                <a href="https://wa.me/5581989332654" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-md">Anunciar</a>
             </div>
         </div>
     </nav>
 
-
     <div class="container mx-auto px-4 py-8 pt-20">
-        <div class="header-container">
+        <div class="header-container" style="opacity: 1;">
             <h1 class="text-3xl font-bold text-gray-800 mb-6">Encontre sua casa perfeita</h1>
         </div>
 
-
-        <div class="search-container flex flex-col md:flex-row gap-4 mb-8">
+        <div class="search-container flex flex-col md:flex-row gap-4 mb-8" style="opacity: 1;">
             <div class="flex-1 relative">
-                <input type="text" id="searchInput" placeholder="Buscar por bairro, cidade..."
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                <input type="text" id="searchInput" placeholder="Buscar por bairro, cidade..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                 <i class="fas fa-search absolute right-4 top-3.5 text-gray-400"></i>
             </div>
             <div class="flex gap-2">
-                <select id="priceFilter"
-                    class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                <select id="priceFilter" class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
                     <option value="all">Qualquer preço</option>
                     <option value="0-35000">Até R$ 35.000</option>
                     <option value="35000-50500">R$ 35.000 - R$ 50.500</option>
@@ -754,16 +706,12 @@
         </div>
 
         <!-- Casas -->
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="propertyGrid">
-            <!-- Propiedade 1 -->
-            <div class="property-card bg-white p-4" data-price="135000" data-location="Ibura, Recife - PE"
-                data-title="Alto dois Carneiros" data-type="casa" data-coords="-8.047,-34.883" data-phone="5581989332654">
+            <!-- Propriedade 1 -->
+            <div class="property-card bg-white p-4" data-price="135000" data-location="Ibura, Recife - PE" data-title="Alto dois Carneiros" data-type="casa" data-coords="-8.112876919983103,-34.96446621388635" data-phone="5581989332654" style="display: block; opacity: 1;">
                 <div class="h-48 bg-gray-200 rounded-md mb-3 relative overflow-hidden">
-                    <img src="./images/casas/alto-dois-carneiros-geysa/img-01.jpg"
-                        alt="Casa no Ibura" class="property-image">
-                    <span
-                        class="absolute top-2 left-2 bg-orange-500 text-white text-xs px-2 py-1 rounded">Destaque</span>
+                    <img src="./images/casas/alto-dois-carneiros-geysa/img-01.jpg" alt="Casa no Ibura" class="property-image">
+                    <span class="absolute top-2 left-2 bg-orange-500 text-white text-xs px-2 py-1 rounded">Destaque</span>
                 </div>
                 <div class="flex justify-between items-start">
                     <div>
@@ -772,7 +720,7 @@
                     </div>
                     <i class="fas fa-chevron-down expand-icon transition-transform"></i>
                 </div>
-                <p class="text-orange-500 font-bold mt-2">R$ 135.000</p>
+                <p class="text-orange-500 font-bold mt-2">R$ 125.000</p>
 
                 <div class="property-details mt-4">
                     <div class="flex flex-wrap gap-4 mb-4">
@@ -786,79 +734,67 @@
                         </div>
                         <div class="amenity">
                             <i class="fas fa-ruler-combined"></i>
-                            <span>120 m²</span>
+                            <span>88,33 m²</span>
                         </div>
                     </div>
                     <p class="text-gray-700 mb-4">Casa com primeiro andar, vaga de garagem, bem localizado, próximo a avenida principal, terminal de onibus, supermercado e conveniências</p>
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-2">
                             <div class="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Joao Victor"
-                                    class="w-full h-full object-cover">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Joao Victor" class="w-full h-full object-cover">
                             </div>
                             <span class="text-sm">Geysa</span>
                         </div>
-                        <button
-                            onclick="openPropertyModal('Alto dois Carneiros', 'Ibura, Recife - PE', '135.000', 'casa', '2', '2', '120', 'Casa com primeiro andar, vaga de garagem, bem localizado, próximo a avenida principal, terminal de onibus, supermercado e conveniências', 'Geysa', 
-                        ['./images/casas/alto-dois-carneiros-geysa/img-02.jpg', './images/casas/alto-dois-carneiros-geysa/img-03.jpg', './images/casas/alto-dois-carneiros-geysa/img-04.jpg', './images/casas/alto-dois-carneiros-geysa/img-05.jpg'], '-8.047,-34.883', 'https://randomuser.me/api/portraits/women/44.jpg', '55819893326222254')"
-                            class="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition">
+                        <button onclick="openPropertyModal('Alto dois Carneiros', 'Ibura, Recife - PE', '125.000', 'casa', '2', '2', '88,33', 'Casa com primeiro andar, vaga de garagem, bem localizado, próximo a avenida principal, terminal de onibus, supermercado e conveniências', 'Geysa', 
+                        ['./images/casas/alto-dois-carneiros-geysa/img-02.jpg', './images/casas/alto-dois-carneiros-geysa/img-03.jpg', './images/casas/alto-dois-carneiros-geysa/img-04.jpg', './images/casas/alto-dois-carneiros-geysa/img-05.jpg'], '-8.112876919983103,-34.96446621388635', 'https://randomuser.me/api/portraits/women/44.jpg', '5581989332654')" class="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition">
                             <i class="fas fa-eye mr-1"></i> Ver mais
                         </button>
                     </div>
                 </div>
             </div>
-
-           
-
-            
-
-            
-                        
-
-        
-
-
         </div>
     </div>
 
-
     <div class="modal" id="propertyModal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2 class="text-2xl font-bold mb-2" id="modalTitle"></h2>
-            <p class="text-gray-600 mb-4" id="modalLocation"></p>
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <h2 class="text-2xl font-bold mb-2" id="modalTitle">Alto dois Carneiros</h2>
+            <p class="text-gray-600 mb-4" id="modalLocation">Ibura, Recife - PE</p>
 
             <div class="property-gallery" id="propertyGallery">
-
+                <img src="./images/casas/alto-dois-carneiros-geysa/img-02.jpg" alt="Alto dois Carneiros" class="main-image">
+                <img src="./images/casas/alto-dois-carneiros-geysa/img-03.jpg" alt="Alto dois Carneiros - Sala">
+                <img src="./images/casas/alto-dois-carneiros-geysa/img-04.jpg" alt="Alto dois Carneiros - Cozinha">
+                <img src="./images/casas/alto-dois-carneiros-geysa/img-05.jpg" alt="Alto dois Carneiros - Quarto">
             </div>
 
             <div class="flex justify-between items-center mb-4">
                 <div>
-                    <span class="text-2xl font-bold text-orange-500" id="modalPrice"></span>
+                    <span class="text-2xl font-bold text-orange-500" id="modalPrice">R$ 135.000</span>
                     <span class="text-gray-600"></span>
                 </div>
-                <span class="feature-badge" id="modalType"></span>
+                <span class="feature-badge" id="modalType">Casa</span>
             </div>
 
             <div class="property-features">
                 <div class="property-feature">
                     <i class="fas fa-bed"></i>
                     <div>
-                        <span class="font-semibold" id="modalBedrooms"></span>
+                        <span class="font-semibold" id="modalBedrooms">2</span>
                         <span class="text-gray-600"> quartos</span>
                     </div>
                 </div>
                 <div class="property-feature">
                     <i class="fas fa-bath"></i>
                     <div>
-                        <span class="font-semibold" id="modalBathrooms"></span>
+                        <span class="font-semibold" id="modalBathrooms">2</span>
                         <span class="text-gray-600"> banheiros</span>
                     </div>
                 </div>
                 <div class="property-feature">
                     <i class="fas fa-ruler-combined"></i>
                     <div>
-                        <span class="font-semibold" id="modalArea"></span>
+                        <span class="font-semibold" id="modalArea">120</span>
                         <span class="text-gray-600"> m²</span>
                     </div>
                 </div>
@@ -871,7 +807,7 @@
                 </div>
             </div>
 
-            <div class="property-description" id="modalDescription"></div>
+            <div class="property-description" id="modalDescription">Casa com primeiro andar, vaga de garagem, bem localizado, próximo a avenida principal, terminal de onibus, supermercado e conveniências</div>
 
             <div class="property-map">
                 <div id="map"></div>
@@ -880,64 +816,67 @@
             <div class="property-contact">
                 <div class="property-contact-info">
                     <div class="property-contact-avatar" id="modalContactAvatar">
-                        <i class="fas fa-user"></i>
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Geysa">
                     </div>
                     <div>
-                        <div class="property-contact-name" id="modalContactName"></div>
-                        <div class="property-contact-role">Proprietário</div>
+                        <div class="property-contact-name" id="modalContactName">Geysa</div>
+                        <div class="property-contact-role">Proprietária</div>
                     </div>
                 </div>
                 <div class="property-contact-buttons" id="modalContactButtons">
-
+                    <a href="https://wa.me/5581989332654" class="contact-button whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="tel:5581989332654" class="contact-button phone">
+                        <i class="fas fa-phone"></i> Ligar
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
     <section class="py-12 px-6 bg-white">
-            <div class="container mx-auto">
-                <div class="text-center mb-12 animate-slide-up animation-delay-200">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Por que comprar no Ibura?</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">O bairro do Ibura oferece ótimas oportunidades para quem busca qualidade de vida e valorização imobiliária.</p>
+        <div class="container mx-auto">
+            <div class="text-center mb-12 animate-slide-up animation-delay-200">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Por que comprar no Ibura?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">O bairro do Ibura oferece ótimas oportunidades para quem busca qualidade de vida e valorização imobiliária.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefício 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl animate-slide-up animation-delay-300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Valorização</h3>
+                    <p class="text-gray-600 text-center">O Ibura tem apresentado crescimento constante na valorização dos imóveis, sendo uma ótima oportunidade de investimento.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Benefício 1 -->
-                    <div class="bg-gray-50 p-8 rounded-xl animate-slide-up animation-delay-300">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <i class="fas fa-chart-line text-green-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">Valorização</h3>
-                        <p class="text-gray-600 text-center">O Ibura tem apresentado crescimento constante na valorização dos imóveis, sendo uma ótima oportunidade de investimento.</p>
+                <!-- Benefício 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl animate-slide-up animation-delay-400">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-subway text-green-600 text-2xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Localização</h3>
+                    <p class="text-gray-600 text-center">Excelente localização com fácil acesso ao centro da cidade e principais vias de transporte público.</p>
+                </div>
 
-                    <!-- Benefício 2 -->
-                    <div class="bg-gray-50 p-8 rounded-xl animate-slide-up animation-delay-400">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <i class="fas fa-subway text-green-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">Localização</h3>
-                        <p class="text-gray-600 text-center">Excelente localização com fácil acesso ao centro da cidade e principais vias de transporte público.</p>
+                <!-- Benefício 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl animate-slide-up animation-delay-500">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-store text-green-600 text-2xl"></i>
                     </div>
-
-                    <!-- Benefício 3 -->
-                    <div class="bg-gray-50 p-8 rounded-xl animate-slide-up animation-delay-500">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <i class="fas fa-store text-green-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-center">Comércio</h3>
-                        <p class="text-gray-600 text-center">Bairro com ampla rede de comércio e serviços, atendendo todas as necessidades dos moradores.</p>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Comércio</h3>
+                    <p class="text-gray-600 text-center">Bairro com ampla rede de comércio e serviços, atendendo todas as necessidades dos moradores.</p>
                 </div>
             </div>
-        </section>
-
+        </div>
+    </section>
 
     <a href="https://wa.me/5581989332654" class="fab-button">
         <i class="fas fa-home"></i>
         <span class="fab-text">Anunciar Imóvel</span>
     </a>
-
 
     <nav class="bottom-nav md:hidden">
         <a href="./index.html" class="bottom-nav-item">
@@ -952,24 +891,25 @@
             <div class="announce-text">ANUNCIAR</div>
             <i class="fas fa-plus"></i>
         </a>
-        <a href="./venda-casas.html" class="bottom-nav-item">
-                <i class="fas fa-tag"></i>
-                <span class="label">Venda</span>
-            </a>
+        <a href="./venda-casas.html" class="bottom-nav-item active">
+            <i class="fas fa-tag"></i>
+            <span class="label">Venda</span>
+        </a>
         <a href="./casas.html" class="bottom-nav-item">
             <i class="fas fa-house-user"></i>
             <span class="label">Casa</span>
         </a>
-        
+    </nav>
 
-    <!-- JavaScript reorganizado -->
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <script>
         // Configurações globais
         const config = {
             map: {
-                defaultLocation: { lat: -8.05428, lng: -34.8813 },
-                zoom: 12,
-                markerIcon: "https://maps.google.com/mapfiles/ms/icons/orange-dot.png"
+                defaultLocation: { lat: -8.112876919983103, lng: -34.96446621388635 },
+                zoom: 15
             },
             selectors: {
                 navbar: '.nav-bar',
@@ -984,49 +924,54 @@
             }
         };
 
-        // Inicialização do mapa
+        // Variáveis do mapa
         let map;
         let markers = [];
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
-                zoom: config.map.zoom,
-                center: config.map.defaultLocation,
-                styles: [{
-                    "featureType": "poi",
-                    "stylers": [{ "visibility": "off" }]
-                }]
-            });
-        }
+        // Criar ícone laranja personalizado
+        const orangeIcon = new L.DivIcon({
+            className: 'orange-marker-icon',
+            iconSize: [20, 20],
+            html: ''
+        });
 
-        // Funções do mapa
-        function addMarkerToMap(lat, lng, title, price) {
-            const marker = new google.maps.Marker({
-                position: { lat: parseFloat(lat), lng: parseFloat(lng) },
-                map: map,
-                title: title,
-                icon: { url: config.map.markerIcon }
-            });
-
-            const contentString = `
-                <div class="map-marker">
-                    ${title}<br>
-                    <strong>R$ ${price}/mês</strong>
-                </div>
-            `;
-
-            const infowindow = new google.maps.InfoWindow({ content: contentString });
-            marker.addListener("click", () => infowindow.open(map, marker));
-            markers.push(marker);
-
-            map.setCenter(marker.getPosition());
-            map.setZoom(15);
-            return marker;
-        }
-
-        function clearMarkers() {
-            markers.forEach(marker => marker.setMap(null));
-            markers = [];
+        // Função para inicializar o mapa
+        function initMap(lat, lng, title, price) {
+            // Remove mapa anterior se existir
+            if (map) {
+                map.remove();
+            }
+            
+            // Aguarda um pequeno delay para garantir que o modal está visível
+            setTimeout(() => {
+                // Inicializa o mapa
+                map = L.map('map').setView([lat, lng], config.map.zoom);
+                
+                // Adiciona camada do OpenStreetMap (não precisa de API key)
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    maxZoom: 19
+                }).addTo(map);
+                
+                // Adiciona marcador
+                const marker = L.marker([lat, lng], { icon: orangeIcon }).addTo(map);
+                
+                // Adiciona popup
+                marker.bindPopup(`
+                    <div style="padding: 10px; min-width: 200px;">
+                        <h3 style="margin: 0 0 5px 0; font-weight: bold;">${title}</h3>
+                        <p style="margin: 0 0 5px 0; color: #666;">Ibura, Recife - PE</p>
+                        <p style="margin: 0; font-weight: bold; color: #FF7A00;">R$ ${price}</p>
+                    </div>
+                `).openPopup();
+                
+                // Força o redimensionamento do mapa para se ajustar ao container
+                setTimeout(() => {
+                    map.invalidateSize();
+                }, 100);
+                
+                markers = [marker];
+            }, 300);
         }
 
         // Funções do modal
@@ -1061,15 +1006,20 @@
 
             // Galeria de imagens
             const galleryContainer = document.getElementById('propertyGallery');
-            galleryContainer.innerHTML = images?.length > 0 
-                ? `<img src="${images[0]}" alt="${title}" class="main-image">` + 
-                  images.slice(1).map((img, i) => `<img src="${img}" alt="${title} - ${['Sala', 'Cozinha', 'Quarto'][i] || 'Foto'}">`).join('')
-                : '';
+            if (images && images.length > 0) {
+                galleryContainer.innerHTML = `
+                    <img src="${images[0]}" alt="${title}" class="main-image">
+                    ${images.slice(1, 4).map((img, i) => 
+                        `<img src="${img}" alt="${title} - ${['Sala', 'Cozinha', 'Quarto'][i] || 'Foto'}">`
+                    ).join('')}
+                `;
+            } else {
+                galleryContainer.innerHTML = '<p>Imagens não disponíveis</p>';
+            }
 
-            // Mapa
-            const [lat, lng] = coords.split(',');
-            clearMarkers();
-            addMarkerToMap(lat, lng, title, price);
+            // Inicializa o mapa com as coordenadas
+            const [lat, lng] = coords.split(',').map(coord => parseFloat(coord.trim()));
+            initMap(lat, lng, title, price);
 
             // Botões de contato
             document.getElementById('modalContactButtons').innerHTML = `
@@ -1085,8 +1035,15 @@
         }
 
         function closeModal() {
-            document.getElementById('propertyModal').classList.remove('active');
+            const modal = document.getElementById('propertyModal');
+            modal.classList.remove('active');
             document.body.style.overflow = 'auto';
+            
+            // Remove o mapa quando o modal é fechado
+            if (map) {
+                map.remove();
+                map = null;
+            }
         }
 
         // Filtros e busca
@@ -1222,5 +1179,6 @@
             filterProperties(); // Filtra inicialmente
         });
     </script>
+
 </body>
 </html>
